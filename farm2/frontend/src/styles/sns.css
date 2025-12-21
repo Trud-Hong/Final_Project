@@ -1,0 +1,845 @@
+/* =====================================================
+   📌 SNS 리스트 페이지
+===================================================== */
+
+.sns-page {
+  width: 100%;
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
+
+.sns-page .sns-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 글 작성 버튼 */
+.sns-write-btn {
+  padding: 10px 18px;
+  background: #3fa34d;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.sns-write-btn:hover {
+  background: #2f8f46;
+}
+
+/* 3열 포스트 리스트 */
+.sns-page .sns-post-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* 포스트 카드 */
+.sns-post-card {
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.sns-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.sns-post-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.sns-post-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.sns-post-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.sns-post-content-preview {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sns-post-meta {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+
+/* =====================================================
+   📌 공통 인풋 스타일
+===================================================== */
+
+.sns-input{
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  font-size: 15px;
+  transition: all 0.2s;
+  background: #fafafa;
+}
+
+.sns-input:focus {
+  outline: none;
+  border-color: #3fa34d;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(63, 163, 77, 0.1);
+}
+
+.sns-textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  font-size: 15px;
+  resize: vertical;
+  transition: all 0.2s;
+  background: #fafafa;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.sns-textarea:focus {
+  outline: none;
+  border-color: #3fa34d;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(63, 163, 77, 0.1);
+}
+
+
+/* =====================================================
+   📌 글쓰기 페이지
+===================================================== */
+
+.sns-create-container {
+  width: 100%;
+  margin-top: 150px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 300px);
+}
+
+.sns-create-box {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 50px;
+  border: 1px solid #f0f0f0;
+}
+
+.sns-create-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #1a1a1a;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* 라벨 */
+.sns-label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 24px 0 10px;
+  color: #333;
+}
+
+.sns-label:first-of-type {
+  margin-top: 0;
+}
+
+/* 파일 업로드 */
+.sns-file-upload {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sns-file-input {
+  display: none;
+}
+
+.sns-file-btn {
+  background: #3fa34d;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  font-weight: 600;
+}
+
+.sns-file-btn:hover {
+  background: #2f8f46;
+}
+
+.sns-file-name {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 미리보기 */
+.sns-preview {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  background: #f0f0f0;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* 버튼 영역 */
+.sns-edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+  justify-content: flex-end;
+}
+
+.sns-cancel-btn {
+  flex: 1;
+  padding: 14px;
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.sns-cancel-btn:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
+}
+
+/* 등록 버튼 */
+.sns-submit-btn {
+  flex: 2;
+  padding: 14px;
+  background: linear-gradient(135deg, #3fa34d 0%, #2f8f46 100%);
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.sns-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(63, 163, 77, 0.3);
+}
+
+
+/* =====================================================
+   📌 상세 페이지
+===================================================== */
+
+.sns-detail-box {
+  background: #fff;
+  padding: 35px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sns-detail-info {
+  font-size: 14px;
+  color: #777;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sns-detail-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.sns-detail-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  margin: 25px 0;
+}
+
+.sns-detail-content {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+   white-space: pre-line; 
+}
+
+
+/* =====================================================
+   📌 좋아요 + 공유 버튼
+===================================================== */
+
+.sns-detail-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px 0 25px;
+}
+
+.sns-like-btn,
+.sns-share-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.sns-like-btn:hover,
+.sns-share-btn:hover {
+  background: #f0f0f0;
+}
+
+
+/* =====================================================
+   📌 댓글 영역 — 디자인 4번 스타일
+===================================================== */
+
+.sns-comment-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 댓글 한 개 */
+.sns-comment-item {
+  display: flex;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.sns-comment-profile {
+  font-size: 30px;
+}
+
+.sns-comment-content {
+  flex: 1;
+}
+
+.sns-comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.sns-comment-author {
+  font-weight: 600;
+  color: #333;
+}
+
+.sns-comment-text {
+  font-size: 16px;
+  color: #222;
+  white-space: pre-line;
+}
+
+/* 댓글 입력 */
+.sns-comment-write {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.sns-comment-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+
+.sns-comment-btn {
+  padding: 12px 16px;
+  background: #3fa34d;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sns-comment-btn:hover {
+  background: #2f8f46;
+}
+
+/* Loading */
+.sns-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* 상세페이지 전체 레이아웃 */
+.sns-detail-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 160px auto 100px;
+  padding: 0 20px;
+  padding-bottom: 100px;
+}
+
+/* 본문 박스 */
+.sns-detail-box {
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+  border: 1px solid #f0f0f0;
+}
+
+/* 작성자 + 날짜 */
+.sns-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sns-detail-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sns-author-avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.sns-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sns-author-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+}
+
+.sns-detail-date {
+  font-size: 13px;
+  color: #888;
+}
+
+.sns-detail-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.sns-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.sns-meta-item i {
+  color: #999;
+}
+
+/* 제목 */
+.sns-detail-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+/* 이미지 */
+.sns-detail-image-box {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #f5f5f5;
+}
+
+.sns-detail-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 본문 내용 */
+.sns-detail-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 32px;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+/* 좋아요 + 공유 버튼 */
+.sns-detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sns-like-btn,
+.sns-share-btn,
+.sns-edit-btn,
+.sns-delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+
+.sns-btn-text {
+  font-size: 14px;
+}
+
+.sns-like-btn {
+  background: #fff5f5;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.sns-like-btn:hover {
+  background: #fee2e2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+}
+
+.sns-share-btn {
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.sns-share-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(71, 85, 105, 0.1);
+}
+
+.sns-edit-btn {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.sns-edit-btn:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+.sns-delete-btn {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.sns-delete-btn:hover {
+  background: #fee2e2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+}
+
+/* 댓글 섹션 */
+.sns-comment-section {
+  background: #fff;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.sns-comment-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.sns-comment-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 15px;
+}
+
+/* 댓글 아이템 */
+.sns-comment-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.sns-comment-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.sns-comment-profile {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.sns-comment-content {
+  width: 100%;
+}
+
+.sns-comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+}
+
+.sns-comment-author {
+  font-weight: 600;
+  color: #333;
+}
+
+.sns-comment-text {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  margin-top: 8px;
+  white-space: pre-line;
+  line-height: 1.6;
+  color: #333;
+  border-left: 3px solid #e2e8f0;
+}
+
+/* 댓글 입력 */
+.sns-comment-write {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #f0f0f0;
+  align-items: flex-start;
+}
+
+.sns-comment-input-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sns-comment-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  transition: all 0.2s;
+  background: #f8f9fa;
+}
+
+.sns-comment-input:focus {
+  outline: none;
+  border-color: #3fa34d;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(63, 163, 77, 0.1);
+}
+
+.sns-comment-btn {
+  padding: 12px 24px;
+  border: none;
+  background: linear-gradient(135deg, #3fa34d 0%, #2f8f46 100%);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.sns-comment-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(63, 163, 77, 0.3);
+}
+
+/* 댓글 수정/삭제 버튼 영역 */
+.sns-comment-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+/* 댓글 수정 버튼 */
+.sns-comment-edit-btn {
+  padding: 6px 12px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sns-comment-edit-btn:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.15);
+}
+
+/* 댓글 삭제 버튼 */
+.sns-comment-delete-btn {
+  padding: 6px 12px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sns-comment-delete-btn:hover {
+  background: #fee2e2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.15);
+}
+
+/* 댓글 편집 모드 */
+.sns-comment-edit-mode {
+  margin-top: 8px;
+}
+
+.sns-comment-edit-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #3fa34d;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.6;
+  transition: all 0.2s;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(63, 163, 77, 0.1);
+}
+
+.sns-comment-edit-input:focus {
+  outline: none;
+  border-color: #3fa34d;
+  box-shadow: 0 0 0 3px rgba(63, 163, 77, 0.15);
+}
+
+.sns-comment-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.sns-comment-save-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #3fa34d 0%, #2f8f46 100%);
+  color: white;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sns-comment-save-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(63, 163, 77, 0.3);
+}
+
+.sns-comment-cancel-btn {
+  padding: 8px 16px;
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sns-comment-cancel-btn:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
+}

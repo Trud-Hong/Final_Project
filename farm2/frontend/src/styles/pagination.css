@@ -1,0 +1,62 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0 40px;
+}
+
+.page-btn {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.page-btn.active {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* 🔍 검색창 전체 박스 */
+.sns-search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* 🔍 검색 인풋 */
+.sns-search-input {
+  width: 280px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.sns-search-input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+
+.sns-search-input::placeholder {
+  color: #aaa;
+}

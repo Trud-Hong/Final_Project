@@ -1,0 +1,47 @@
+/* 완전 각진 입력 영역 */
+.predict-input-area {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  border: 1px solid #bde4c7;   /* 공지사항과 동일한 라인 컬러 */
+  border-radius: 0;            /* 🔥 완전 각진 */
+  padding: 14px 18px;
+  background: #ffffff;
+  width: fit-content;
+  margin: 0 auto 20px auto;
+}
+
+/* 셀렉트 박스 (각짐) */
+.predict-input-area select {
+  border: 1px solid #bde4c7;
+  border-radius: 0;            /* 🔥 완전 각진 */
+  padding: 10px 12px;
+  background: white;
+  font-size: 15px;
+  color: #333;
+  min-width: 140px;
+}
+
+/* 포커스 시도 완전 각진 유지 */
+.predict-input-area select:focus {
+  border-color: #8ccfa2;
+  outline: none;
+}
+
+/* 버튼 – 너가 기존에 쓰던 스타일을 유지하되 각지게 변경 */
+.predict-input-area button {
+  padding: 10px 22px;
+  border-radius: 0;            /* 🔥 완전 각진 */
+  border: 1px solid #1f78ff;
+  background: #1f78ff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.18s;
+}
+
+/* hover 효과만 유지 */
+.predict-input-area button:hover {
+  background: #1662d6;
+}

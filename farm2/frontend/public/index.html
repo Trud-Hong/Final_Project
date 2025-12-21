@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>농사팜</title>
+  
+  <!-- 혜정추가: 카카오 지도 API 로드하는 스크립트 -->
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e100490da5b3222915e21b522d074b23&libraries=services"></script>
+  
+  <!-- 카카오 주소 검색 API -->
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Animate CSS -->
+  <link href="%PUBLIC_URL%/lib/animate/animate.min.css" rel="stylesheet">
+  
+  <!-- Owl Carousel -->
+  <link href="%PUBLIC_URL%/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
+  <link href="%PUBLIC_URL%/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link href="%PUBLIC_URL%/css/style.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- Owl Carousel JS (필수!!) -->
+  <script src="%PUBLIC_URL%/lib/owlcarousel/owl.carousel.min.js"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 지원 챗봇 -->
+  <script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) return;
+
+    var ch = function() { ch.c(arguments); };
+    ch.q = [];
+    ch.c = function(args) { ch.q.push(args); };
+    w.ChannelIO = ch;
+
+    function l() {
+      if (w.ChannelIOInitialized) return;
+      w.ChannelIOInitialized = true;
+
+      // 라이브러리 로드
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.onload = function () {
+        // *** 기본 버튼을 즉시 숨김 ***
+        window.ChannelIO('hideChannelButton');
+      };
+
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+
+    if (document.readyState === 'complete') l();
+    else {
+      w.addEventListener('DOMContentLoaded', l);
+      w.addEventListener('load', l);
+    }
+  })();
+</script>
+
+
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>

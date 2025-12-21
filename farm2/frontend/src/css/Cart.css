@@ -1,0 +1,400 @@
+/* Cart.css */
+
+.cart-divider {
+    border: none;
+    border-top: 2px solid #dee2e6;
+    margin: 50px 0;
+}
+
+.cart-item-count {
+    font-size: 1rem;
+}
+
+.cart-header {
+    font-size: 14px;
+}
+
+.cart-header-checkbox {
+    width: 15px;
+    height: 15px;
+}
+
+.cart-header-no {
+    font-size: 13px;
+}
+
+.cart-header-product-name {
+    padding-left: 10px;
+}
+
+.cart-header-quantity {
+    font-size: 13px;
+}
+
+.cart-header-manage {
+    font-size: 13px;
+}
+
+.cart-purchase-button {
+    min-width: 200px;
+    font-size: 18px;
+    padding: 12px 30px;
+}
+
+.cart-purchase-button:disabled {
+    opacity: 0.5;
+}
+
+.cart-delete-button {
+    min-width: 200px;
+    font-size: 18px;
+    padding: 12px 30px;
+}
+
+.cart-delete-button:disabled {
+    opacity: 0.5;
+}
+
+.cart-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+.cart-modal-dialog {
+    margin: auto;
+    max-width: 600px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.cart-modal-header {
+    flex-shrink: 0;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 20px 24px;
+}
+
+.cart-modal-header .modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+
+.cart-modal-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    min-height: 0;
+    max-height: calc(90vh - 140px);
+    padding: 24px;
+}
+
+.cart-modal-body h6 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e9ecef;
+    letter-spacing: -0.3px;
+}
+
+.cart-modal-products {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.cart-modal-products::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cart-modal-products::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.cart-modal-products::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.cart-modal-products::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.cart-modal-product-image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    margin-right: 18px;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.cart-modal-product-info {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.cart-modal-product-info h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.cart-modal-product-info .text-muted {
+    text-align: left;
+}
+
+.cart-modal-product-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cart-modal-discount-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+}
+
+.cart-modal-product-price {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart-modal-product-price-normal {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart-modal-terms {
+    font-size: 0.875rem;
+}
+
+.cart-modal-footer {
+    flex-shrink: 0;
+}
+
+.cart-modal-submit-button {
+    min-width: 200px;
+    font-size: 18px;
+    padding: 12px 30px;
+}
+
+/* 구매확인 모달 - 상품 가격 표시 */
+.cart-modal-product-price-wrapper {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.cart-modal-product-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.cart-modal-product-price-discounted {
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    display: inline-block;
+}
+
+.cart-modal-product-price-normal {
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.cart-modal-product-price-original {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 15px;
+    margin-top: 4px;
+    font-weight: 400;
+    line-height: 1.2;
+    display: block;
+    text-align: left;
+}
+
+.cart-modal-discount-badge-basic {
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(255, 68, 68, 0.3);
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    height: fit-content;
+    vertical-align: baseline;
+}
+
+.cart-modal-discount-badge-bulk {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(23, 162, 184, 0.3);
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    height: fit-content;
+    vertical-align: baseline;
+}
+
+/* 구매확인 모달 - 결제 정보 */
+.cart-modal-payment-info {
+    padding: 24px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cart-modal-payment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-modal-payment-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.cart-modal-payment-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.cart-modal-payment-value {
+    color: #333;
+    font-weight: 600;
+    text-align: right;
+    letter-spacing: -0.3px;
+}
+
+.cart-modal-payment-discount {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.05);
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 2px 0;
+}
+
+.cart-modal-payment-discount .cart-modal-payment-label {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.cart-modal-payment-discount .cart-modal-payment-value {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+.cart-modal-payment-subtotal {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 2px solid #dee2e6;
+}
+
+.cart-modal-payment-subtotal .cart-modal-payment-label {
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cart-modal-payment-subtotal .cart-modal-payment-value {
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cart-modal-payment-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #dee2e6, transparent);
+    margin: 10px 0;
+}
+
+.cart-modal-payment-total {
+    margin-top: 12px;
+    padding: 16px 0 0 0;
+    border-top: 3px solid #28a745;
+    background: linear-gradient(to bottom, rgba(40, 167, 69, 0.05), transparent);
+    border-radius: 0 0 8px 8px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 8px;
+}
+
+.cart-modal-payment-total .cart-modal-payment-label {
+    color: #333;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+.cart-modal-payment-total-amount {
+    color: #28a745;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 2px rgba(40, 167, 69, 0.1);
+}
+

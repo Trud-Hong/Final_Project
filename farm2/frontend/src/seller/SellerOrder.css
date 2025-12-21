@@ -1,0 +1,97 @@
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  width: 75px;
+  text-align: center;
+}
+
+/* 상태별 컬러 */
+.status-pending { 
+  color: #004085;
+  background-color: #cce5ff;
+} /* 결제완료 */
+.status-ready {     
+  color: #155724;
+  background-color: #d4edda; 
+}   /* 배송준비중 */
+.status-shipping { 
+  color: #155724;
+  background-color: #d4edda;
+} /* 배송중 */
+.status-delivered { 
+  color: #155724;
+  background-color: #d4edda;
+} /* 배송완료 */
+.status-completed { 
+  color: #383d41;
+  background-color: #e2e3e5;
+} /* 거래완료 */
+.status-cancel {
+  color: #721c24;
+  background-color: #f8d7da;
+} /* 환불/취소 */
+.status-cancelreq{ 
+  color: #856404;
+  background-color: #fff3cd;
+}/* 환불요청 */
+
+.order-row-completed {
+  background: #f6f6f6 !important;
+}
+
+.order-row-completed td {
+  color: #777 !important;
+}
+
+
+/* 페이징 버튼 */
+/* 페이징 전체 레이아웃 */
+.paging-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 25px;
+  padding-bottom: 20px;
+}
+
+/* 동그란 버튼 */
+.page-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #cdd5df;
+  background: #fff;
+  color: #17d627;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-circle:hover:not(:disabled) {
+  background: #ffffff;
+  border-color: #17d627;
+}
+
+.page-circle:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* 현재 페이지 정보 */
+.page-info {
+  font-size: 16px;
+  font-weight: 600;
+  color: #45d851;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #cdd5df;
+}

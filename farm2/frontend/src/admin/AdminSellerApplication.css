@@ -1,0 +1,162 @@
+/* 전체 카드 */
+.admin-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+/* 제목 */
+.admin-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* 테이블 */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.admin-table thead th {
+  padding: 14px 10px;
+  background: #f4f5f7;
+  border-bottom: 2px solid #e5e5e5;
+  font-size: 15px;
+  color: #555;
+}
+
+.admin-table tbody tr {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  transition: 0.25s;
+}
+
+ 
+
+.admin-table tbody td {
+  padding: 14px 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* 상세보기 row */
+.detail-row td {
+  background: #f8fbff;
+  border-radius: 14px;
+}
+
+.detail-box {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+}
+
+.detail-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  width: 100%;
+}
+
+.detail-grid h4 {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.detail-grid p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+
+.detail-row td {
+  padding: 0;
+  background: #f8fbff;
+  border-radius: 12px;
+}
+
+.detail-table-wrapper {
+  padding: 25px;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.detail-table thead .section-title {
+  background: #eef2f6;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #dce2e8;
+}
+
+.detail-table td {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.detail-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 왼쪽 항목 컬럼 */
+.detail-table td:first-child {
+  width: 200px;
+  font-weight: 600;
+  color: #444;
+  background: #fafbfd;
+}
+
+
+/* 공통 버튼 스타일 */
+.action-btn {
+ background: none !important;   /* 배경 완전 제거 */
+  padding: 0 8px;                /* 텍스트 버튼 간격 */
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+/* 상세보기 버튼 (회색/파스텔톤 느낌) */
+.detail-btn {
+  
+  color: #3e87e6;
+}
+
+
+/* 승인 버튼 (파스텔 그린) */
+.approve-btn {
+
+  color: #4cad4c;
+}
+
+
+/* 거절 버튼 (파스텔 레드) */
+.reject-btn {
+
+  color: #d45f5f;
+}
+

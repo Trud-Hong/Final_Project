@@ -1,0 +1,354 @@
+/* PaymentModal.css */
+
+.payment-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.25s ease;
+}
+
+.payment-modal-backdrop.visible {
+  opacity: 1;
+}
+
+.payment-modal-backdrop.hidden {
+  opacity: 0;
+}
+
+.payment-modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  min-height: 0; /* flex item이 제대로 축소되도록 */
+}
+
+.payment-modal-content.visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.payment-modal-content.hidden {
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+}
+
+/* 테스트 환경 배너 */
+.payment-test-banner {
+  background: #FFF4E6;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #FFE8CC;
+}
+
+.payment-test-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.payment-test-banner-icon {
+  font-size: 16px;
+}
+
+.payment-test-banner-text {
+  font-size: 13px;
+  color: #8B4513;
+  font-weight: 500;
+}
+
+.payment-test-banner-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #8B4513;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 헤더 */
+.payment-modal-header {
+  padding: 24px 24px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+
+.payment-modal-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #191f28;
+}
+
+.payment-modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.payment-modal-close-btn:hover:not(:disabled) {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.payment-modal-close-btn:disabled {
+  cursor: not-allowed;
+}
+
+/* 본문 */
+.payment-modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0; /* flex item이 제대로 축소되도록 */
+  padding: 24px;
+  background: #ffffff;
+  /* 스크롤바 스타일링 (선택사항) */
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.payment-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.payment-modal-body::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
+
+.payment-modal-body::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.payment-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* 결제 방법 그리드 */
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.payment-method-btn {
+  border-radius: 12px;
+  padding: 16px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  min-height: 80px;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.payment-method-btn:hover:not(:disabled):not(.selected) {
+  background: #f8f9fa;
+  border-color: #d0d0d0;
+}
+
+.payment-method-btn.selected {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+}
+
+.payment-method-btn.selected.kakao {
+  background: #FEE500;
+  border: 2px solid #000;
+}
+
+.payment-method-btn:disabled {
+  cursor: not-allowed;
+}
+
+.payment-method-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #3182f6;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.payment-method-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.payment-method-btn.selected.kakao .payment-method-logo {
+  color: #000;
+}
+
+.payment-method-icon {
+  font-size: 28px;
+}
+
+.payment-method-name {
+  font-size: 12px;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* 결제 혜택 정보 */
+.payment-benefits {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.payment-benefits-item {
+  margin-bottom: 8px;
+}
+
+.payment-benefits-item:last-child {
+  margin-bottom: 0;
+}
+
+.payment-benefits-bold {
+  font-weight: 600;
+}
+
+.payment-benefits-link {
+  color: #3182f6;
+  text-decoration: none;
+}
+
+/* 체크박스 영역 */
+.payment-checkbox-group {
+  margin-bottom: 24px;
+}
+
+.payment-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.payment-checkbox-label:last-child {
+  margin-bottom: 0;
+}
+
+.payment-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.payment-checkbox:disabled {
+  cursor: not-allowed;
+}
+
+.payment-checkbox-required {
+  color: #ef4444;
+}
+
+/* 하단 버튼 영역 */
+.payment-modal-footer {
+  padding: 20px 24px 24px;
+  border-top: 1px solid #f0f0f0;
+  background: #ffffff;
+  flex-shrink: 0; /* footer가 축소되지 않도록 */
+}
+
+.payment-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #3182f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(49, 130, 246, 0.3);
+}
+
+.payment-submit-btn:hover:not(:disabled) {
+  background: #1b64da;
+  transform: translateY(-1px);
+}
+
+.payment-submit-btn:disabled {
+  background: #e0e0e0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.payment-submit-btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.payment-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

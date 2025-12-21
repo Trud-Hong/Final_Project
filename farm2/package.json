@@ -1,0 +1,27 @@
+{
+  "name": "farm",
+  "private": true,
+  "scripts": {
+    "start:frontend": "cd frontend && yarn start",
+    "start:backend": "cd backend && ./gradlew bootRun",
+    "dev": "concurrently \"yarn run start:frontend\" \"yarn run start:backend\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "lucide-react": "^0.554.0",
+    "quill": "^2.0.3",
+    "react-bootstrap": "^2.10.10",
+    "react-icons": "^5.5.0",
+    "react-multi-carousel": "2.8.3",
+    "react-quill-new": "^3.6.0",
+    "react-quilljs": "^2.0.5",
+    "recharts": "^3.5.0"
+  },
+  "packageManager": "yarn@1.22.22"
+}

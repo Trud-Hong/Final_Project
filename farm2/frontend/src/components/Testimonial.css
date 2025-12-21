@@ -1,0 +1,32 @@
+.re {
+    text-align: left;
+    font-weight: 600;
+}
+
+.reName {
+    font-weight: 500;
+    text-align: right;
+}
+
+.reDay {
+    font-size: 15px;
+}
+
+/* 카드 크기 일정하게 유지 */
+.testimonial-item {
+    min-height: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1rem !important;
+}

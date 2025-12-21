@@ -1,0 +1,23 @@
+.floating-ai-btn {
+  position: fixed;
+  bottom: 40px;  
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #4caf50;
+  color: white;
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: 0.2s;
+}
+
+.floating-ai-btn:hover {
+  transform: scale(1.1);
+}

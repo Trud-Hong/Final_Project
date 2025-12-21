@@ -1,0 +1,224 @@
+/* MyPage.css */
+
+.mypage-title {
+    margin-right: 300px;
+}
+
+.mypage-subtitle {
+    margin-right: 300px;
+}
+
+.mypage-menu-icon {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.mypage-link-hover {
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.mypage-link-hover:hover {
+    color: #28a745;
+    text-decoration: underline;
+}
+
+.mypage-recent-orders-section {
+    margin-top: 40px;
+}
+
+.mypage-orders-header {
+    font-size: 14px;
+}
+
+.mypage-order-row {
+    font-size: 13px;
+}
+
+.mypage-order-row.refunded {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.mypage-badge-small {
+    font-size: 11px;
+    padding: 3px 8px;
+}
+
+.mypage-product-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.mypage-product-image {
+    height: 250px;
+    object-fit: cover;
+}
+
+.mypage-badge-new {
+    font-weight: bold;
+    z-index: 5;
+}
+
+.mypage-badge-discount {
+    font-weight: bold;
+    z-index: 5;
+}
+
+.mypage-badge-bulk {
+    font-weight: bold;
+    z-index: 5;
+    font-size: 12px;
+    padding: 4px 8px;
+    white-space: nowrap;
+}
+
+.mypage-badge-bulk.mypage-with-discount {
+    top: 60px;
+}
+
+.mypage-badge-bulk.mypage-without-discount {
+    top: 16px;
+}
+
+.mypage-badge-soldout {
+    font-weight: bold;
+    z-index: 5;
+}
+
+.mypage-product-info {
+    min-height: 80px;
+}
+
+.mypage-product-price {
+    font-size: 24px;
+}
+
+.mypage-menu-item {
+    cursor: pointer;
+}
+
+.mypage-product-item {
+    cursor: pointer;
+}
+
+.mypage-product-name-link {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+.mypage-product-name-link:hover {
+    color: #28a745;
+}
+
+.mypage-discounted-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mypage-original-price {
+    font-size: 14px;
+}
+
+.mypage-normal-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mypage-stock-info {
+    font-size: 12px;
+    color: #666;
+}
+
+.mypage-badge-bulk.mypage-with-discount {
+    top: 60px;
+    right: 16px;
+}
+
+.mypage-badge-bulk.mypage-without-discount {
+    top: 16px;
+    right: 16px;
+}
+
+/* 판매자 등록 관련 버튼 */
+
+.seller-btn {
+  width: 280px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s ease;
+}
+
+/* 기본 등록 */
+.seller-normal {
+  background: #4CAF50;
+  color: white;
+}
+.seller-normal:hover {
+  background: #43a047;
+}
+
+/* 심사중 */
+.seller-pending {
+  background: #cfd8dc;
+  color: #455a64;
+  cursor: not-allowed;
+}
+
+/* 거절됨 */
+.seller-rejected {
+  background: #ffca28;
+  color: #5d4037;
+}
+.seller-rejected:hover {
+  background: #f4b400;
+}
+
+/* 승인됨 */
+.seller-approved {
+  background: #2e7d32;
+  color: white;
+}
+.seller-approved:hover {
+  background: #27632a;
+}
+
+.mypage-tab-btn {
+  min-width: 140px;
+  padding: 10px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0;              
+  border: 1px solid #00b41b;     
+  background-color: #ffffff;    
+  color: #00b41b;                
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+
+.mypage-tab-btn.active {
+  background-color: #00b41b;     
+  color: #ffffff;                
+  border-color: #00b41b;
+}
+
+/* 선택 안 된 탭 hover */
+.mypage-tab-btn:not(.active):hover {
+  background-color: #f4fff4;     
+}
+
+/* 선택된 탭 hover */
+.mypage-tab-btn.active:hover {
+  background-color: #00a219;     
+}
+
+

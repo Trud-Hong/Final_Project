@@ -1,0 +1,79 @@
+.seasonal-slider .slick-slide > div {
+  padding: 0 10px;   /* 카드 사이 여백 */
+}
+
+.seasonal-slider {
+  margin: 0 -10px;   /* 양쪽 여백 보정 */
+}
+
+.seasonal-slider .slick-prev,
+.seasonal-slider .slick-next {
+  z-index: 2;
+}
+
+/* 화살표 공통 스타일 */
+.seasonal-slider .slick-prev,
+.seasonal-slider .slick-next {
+  width: 45px;
+  height: 45px;
+  background: #8bd66e; /* 버튼 배경 초록 */
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  top: 45%;
+  transform: translateY(-50%);
+  transition: 0.25s ease;
+  z-index: 10;
+  border: none;
+}
+
+/* hover 시 더 진한 초록 */
+.seasonal-slider .slick-prev:hover,
+.seasonal-slider .slick-next:hover {
+  background: #52b04c;
+}
+
+/* 화살표 아이콘 (흰색) */
+.seasonal-slider .slick-prev::before,
+.seasonal-slider .slick-next::before {
+  color: #ffffff;     /* 요청: 화살표 흰색 */
+  font-size: 22px;
+  opacity: 1 !important;
+}
+
+/* 화살표 방향 심볼 변경 */
+.seasonal-slider .slick-prev::before {
+  content: "❮";
+}
+.seasonal-slider .slick-next::before {
+  content: "❯";
+}
+
+/* 위치 */
+.seasonal-slider .slick-prev {
+  left: -55px;
+}
+.seasonal-slider .slick-next {
+  right: -55px;
+}
+
+/* 반응형 위치 조정 */
+@media (max-width: 992px) {
+  .seasonal-slider .slick-prev {
+    left: -30px;
+  }
+  .seasonal-slider .slick-next {
+    right: -30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .seasonal-slider .slick-prev,
+  .seasonal-slider .slick-next {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}

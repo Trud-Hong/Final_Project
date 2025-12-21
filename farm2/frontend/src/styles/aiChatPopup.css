@@ -1,0 +1,202 @@
+/* ========= 팝업 전체 영역 ========= */
+.ai-popup-wrapper {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+
+  z-index: 99999;
+}
+
+.ai-popup-container {
+  width: 420px;
+  max-height: 80vh;
+  background: #fff;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+/* ========= 닫기 버튼 ========= */
+.ai-popup-close {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+  cursor: pointer;
+}
+
+
+/* ========= 헤더 ========= */
+.ai-chat-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fff;
+}
+
+.ai-header-left {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.connect-agent-btn {
+  background: #ffb948;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ========= 본문 ========= */
+.ai-chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 18px;
+  background: #fafafa;
+}
+
+
+/* ========= 최근 문의 ========= */
+.recent-box {
+  background: white;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.recent-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.recent-item {
+  background: #f3f3f3;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+
+/* ========= 추천 질문 ========= */
+.ai-example-box {
+  margin-bottom: 10px;
+}
+
+.ai-example-item {
+  background: white;
+  padding: 11px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+/* ========= 메시지 ========= */
+.chat-row {
+  display: flex;
+  margin: 12px 0;
+}
+
+.chat-row.user {
+  justify-content: flex-end;
+}
+
+.chat-row.ai {
+  justify-content: flex-start;
+}
+
+.chat-bubble {
+  max-width: 70%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 15px;
+}
+
+.user-bubble {
+  background: #d9f7c8;
+}
+
+.ai-bubble {
+  background: #ecf0ff;
+}
+
+
+/* AI typing 애니메이션 */
+.typing {
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  animation: blink 1s infinite ease-in-out;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+
+/* ========= 입력창 ========= */
+.ai-chat-input-area {
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid #eee;
+
+  display: flex;
+  gap: 10px;
+}
+
+.ai-chat-input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.ai-chat-input-area button {
+  padding: 0 18px;
+  background: #25c468;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.back-to-top {
+  display: none !important;
+}
+

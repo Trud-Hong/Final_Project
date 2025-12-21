@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../../../../react"
+		},
+		{
+			"name": "farm",
+			"path": "../../../../../../../../../farm"
+		},
+		{
+			"name": "farm2",
+			"path": "../../../../../../../.."
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}

@@ -1,0 +1,20 @@
+ /* 캐러셀 화살표를 슬라이드 이미지 옆으로 붙이기 */
+#seasonCarousel .carousel-control-prev,
+#seasonCarousel .carousel-control-next {
+    width: 50px;            /* 기존 15% → 좁혀서 가까이 붙임 */
+}
+
+#seasonCarousel .carousel-control-prev {
+    left: -50px;            /* 왼쪽 화살표 위치 조정 */
+}
+
+#seasonCarousel .carousel-control-next {
+    right: -50px;           /* 오른쪽 화살표 위치 조정 */
+}
+
+/* 화살표 아이콘 크기 조정(선택) */
+#seasonCarousel .carousel-control-prev-icon,
+#seasonCarousel .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
